@@ -1,19 +1,12 @@
 ﻿@model ShoppingCart
 <head>
-    <meta property="og:title" content="@Model.Product.Title" />
-    <meta property="og:description" content="@Model.Product.Description" />
-    <meta property="og:url" content="https://aspmvcfinal.azurewebsites.net/Customer/Home/Details?productId=@Model.ProductId" />
-
-    @if (!string.IsNullOrEmpty(Model.Product.ProductImages?.FirstOrDefault()?.ImageUrl))
-    {
-        <meta property="og:image" content="https://aspmvcfinal.azurewebsites.net/@Model.Product.ProductImages.FirstOrDefault()?.ImageUrl" />
-    }
-    else
-    {
-        <meta property="og:image" content="https://aspmvcfinal.azurewebsites.net/images/default-image.jpg" />
+    @section MyStyles {
+        <meta property="og:title" content="@Model.Product.Title" />
+        <meta property="og:description" content="@Model.Product.Description" />
+        <meta property="og:url" content="https://aspmvcfinal.azurewebsites.net/product/@Model.Product.Id" />
+        <meta property="og:image" content="@Model.Product.ProductImages.FirstOrDefault()?.ImageUrl" />
     }
 </head>
-
 
 <form method="post">
     <input hidden asp-for="ProductId" />
