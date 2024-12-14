@@ -1,10 +1,12 @@
-﻿@model ShoppingCart
+﻿
+
+@model ShoppingCart
 <head>
     @section MyStyles {
         <meta property="og:title" content="@Model.Product.Title" />
-        <meta property="og:description" content="@Html.Raw(Model.Product.Description)" />
-        <meta property="og:url" content="https://aspmvcfinal.azurewebsites.net/@Url.Action("Details", "Products", new { id = Model.Product.Id })" />
-        <meta property="og:image" content="@Url.Content($"https://aspmvcfinal.azurewebsites.net{Model.Product.ProductImages.FirstOrDefault()?.ImageUrl}")" />
+        <meta property="og:description" content="@Model.Product.Description?.Replace("<p>", "").Replace("</p>", "")" />
+        <meta property="og:url" content="@Url.Action("Details", "Home", new { productId = Model.Product.Id }, Context.Request.Scheme)" />
+        <meta property="og:image" content="@Url.Content($"https://aspmvcfinal.azurewebsites.net{Model.Product.ProductImages.FirstOrDefault()?.ImageUrl.Replace("\\", "/")}")" />
     }
 </head>
 
