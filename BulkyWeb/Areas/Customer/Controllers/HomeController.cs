@@ -28,6 +28,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             return View(productList);
         }
 
+        [AllowAnonymous]
         public IActionResult Details(int productId)
         {
             ShoppingCart cart = new() {
@@ -39,7 +40,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [AllowAnonymous]
         public IActionResult Details(ShoppingCart shoppingCart) 
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
