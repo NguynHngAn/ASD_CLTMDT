@@ -7,6 +7,8 @@
         <meta property="og:description" content="@Model.Product.Description?.Replace("<p>", "").Replace("</p>", "")" />
         <meta property="og:url" content="@Url.Action("Details", "Home", new { productId = Model.Product.Id }, Context.Request.Scheme)" />
         <meta property="og:image" content="@Url.Content($"https://aspmvcfinal.azurewebsites.net{Model.Product.ProductImages.FirstOrDefault()?.ImageUrl.Replace("\\", "/")}")" />
+        <meta property="og:image:width" content="736" />
+        <meta property="og:image:height" content="736" />
     }
 </head>
 
