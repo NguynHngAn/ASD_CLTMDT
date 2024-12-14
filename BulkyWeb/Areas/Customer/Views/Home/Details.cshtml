@@ -1,14 +1,21 @@
 ﻿@model ShoppingCart
 @section MyStyles {
-    <meta property="og:title" content="@Model.Product" />
+    <meta property="og:title" content="@Model.Product.Title" />
 
-<<<<<<< HEAD
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="@Model.Product.Description" />
 
-    <meta property="og:url" content="https://aspmvcfinal.azurewebsites.net/Customer/Home/Details?@Model.ProductId" />
+    <meta property="og:url" content="https://aspmvcfinal.azurewebsites.net/Customer/Home/Details?productId=@Model.ProductId" />
 
-    <meta property="og:image" content="" />
+    @if (!string.IsNullOrEmpty(Model.Product.ProductImages?.FirstOrDefault()?.ImageUrl))
+    {
+        <meta property="og:image" content="@Model.Product.ProductImages.FirstOrDefault().ImageUrl" />
+    }
+    else
+    {
+        <meta property="og:image" content="https://example.com/default-image.jpg" />
+    }
 }
+
 <form method="post">
     <input hidden asp-for="ProductId" />
     <div class="card shadow border-0 mt-4 mb-4">
