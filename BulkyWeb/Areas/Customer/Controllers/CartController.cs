@@ -12,7 +12,6 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 {
 
     [Area("customer")]
-    [Authorize]
     public class CartController : Controller
     {
 

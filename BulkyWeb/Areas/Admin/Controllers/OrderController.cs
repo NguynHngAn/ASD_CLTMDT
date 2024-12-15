@@ -10,9 +10,9 @@ using Stripe.Checkout;
 using System.Diagnostics;
 using System.Security.Claims;
 
-namespace BulkyBookWeb.Areas.Admin.Controllers {
-	[Area("admin")]
-    [Authorize]
+namespace BulkyBookWeb.Areas.Admin.Controllers 
+{
+	[Area("Admin")]
 	public class OrderController : Controller {
 
 
