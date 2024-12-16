@@ -53,4 +53,4 @@ jobs:
           app-name: 'aspmvcfinal'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2B1E2C49FAE64D359B1DE7E8214749F9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_32E6610D24D84538BEAB25ED28474EFE }}
